@@ -5,9 +5,10 @@ import axios from 'axios';
 
 // type Props = {};
 export default class NewsScreen extends Component {
-  constructor(props) {
-    super(props)
-    prefik_url = 'http://wadaya.rey1024.com/upload/kategori/';
+
+  constructor() {
+    super()
+    prefik_url = 'http://newsapi.org/v2/sources?apiKey=266d190c4442467880148c3565390825/';
     this.state = {
         categories: []
     };
@@ -19,7 +20,9 @@ export default class NewsScreen extends Component {
         console.log(categories);
         this.setState({ categories });
       })
-      .catch(err=>console.log("Error"))
+      .catch(err=>{
+
+      })
   }
 
   keyExtractor = (item, index) => index.toString()
@@ -32,9 +35,9 @@ export default class NewsScreen extends Component {
   render() {
     return (
         <View style={styles.container} >
-          <View style={styles.header}>
+          {/* <View style={styles.header}>
             <Text style={styles.txtHeader}> Kategori Budaya </Text>
-          </View>
+          </View> */}
             <FlatList
                keyExtractor={this.keyExtractor}
                data={this.state.categories}
