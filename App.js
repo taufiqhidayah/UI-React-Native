@@ -8,7 +8,7 @@ import { Icon } from 'react-native-elements'
 import HomeScreen from './src/layout/HomeScreen'
 import ProfileScreen from './src/layout/ProfileScreen'
 import NewsScreen from './src/layout/NewsScreen'
-
+import MentorScreen from './src/layout/MentorScreen'
 
 // type Props = {};
 const Tab = createBottomTabNavigator();
@@ -37,7 +37,7 @@ function MyTabs() {
     }}
     >
       <Tab.Screen name="Home"  component={HomeScreen} />
-      <Tab.Screen name="News" component={NewsScreen} />
+      <Tab.Screen name="News" component={MentorScreen} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
   );

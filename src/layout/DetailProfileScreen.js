@@ -3,7 +3,7 @@ import { View, StyleSheet, Image, TouchableHighlight } from 'react-native'
 import { Avatar, Text, Badge, Icon, withBadge, Button, Card } from 'react-native-elements'
 import { ScrollView } from 'react-native-gesture-handler'
 
-function ProfileScreen() {
+function DetailProfileScreen() {
     return (
 
         <ScrollView>
@@ -155,4 +155,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default ProfileScreen
+export default DetailProfileScreen
