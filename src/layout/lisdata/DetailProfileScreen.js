@@ -3,18 +3,19 @@ import { View, StyleSheet, Image, TouchableHighlight } from 'react-native'
 import { Avatar, Text, Badge, Icon, withBadge, Button, Card } from 'react-native-elements'
 import { ScrollView } from 'react-native-gesture-handler'
 
-function DetailProfileScreen() {
+function DetailProfileScreen({ route, navigation })  {
+    const { itemId } = route.params;
+    const { imgId } = route.params;
     return (
 
         <ScrollView>
             <View>
                 <Card>
+                    <Text></Text>
                     <View style={styles.header}>
                         <Image
                             style={styles.image}
-                            source={{
-                                uri: 'https://randomuser.me/api/portraits/men/41.jpg',
-                            }}
+                            source={imgId}
                         />
                         {/* <Avatar 
                 style={styles.image}
@@ -22,7 +23,7 @@ function DetailProfileScreen() {
                
                 size="xlarge"
             /> */}
-                        <Text style={{ fontSize: 20, marginTop: 10 }}>Jake W Harton</Text>
+                        <Text style={{ fontSize: 20, marginTop: 10 }}>{itemId}</Text>
                         <Text style={{ fontSize: 13, opacity: 70 }}>Founder.Xlogics.com</Text>
 
 
@@ -31,7 +32,7 @@ function DetailProfileScreen() {
                         <TouchableHighlight underlayColor="white">
                             <View style={{ height: 40, borderWidth: 0.2, borderRadius: 10, width: 100, flexDirection: "row", justifyContent: 'center', alignItems: 'center', backgroundColor: '#fff' }}>
                                 <Icon
-                                    name='rss'
+                                    name='rss'x
                                     type='font-awesome'
                                     color='#f50'
                                     style={{ fontSize: 2 }}
@@ -110,10 +111,10 @@ function DetailProfileScreen() {
                                 />
                                 <Text style={{ flex: 1, marginLeft: 10 }}>www.github.com</Text>
                                 <Icon
-                                   style={{ flex: 1 }}
-                                   name='caret-right'
-                                   type='font-awesome'
-                                   color='#616662'
+                                    style={{ flex: 1 }}
+                                    name='caret-right'
+                                    type='font-awesome'
+                                    color='#616662'
                                 />
                             </View>
                         </TouchableHighlight>

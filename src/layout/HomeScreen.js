@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 import { Text, Image, View, StatusBar, Picker, FlatList, Dimensions, TouchableHighlight } from 'react-native'
 import { Header, Button, Card, Icon } from 'react-native-elements'
 
+
 function HomeScreen() {
     // const {width, height} = Dimensions.get("window")
     const [selectedVal, setSelectedVal] = useState('React')
     const [news, setNews] = useState([
-        
+
         { key: '1', author: "Tono", tittle: "Lorem Ipsum ", desc: "lorem sit amet consectetur  ipsum dolor sit amet consectetur adipiscing elit", img: { uri: 'https://reactnative.dev/img/tiny_logo.png' } },
         { key: '2', author: "Tono", tittle: "Lorem Ipsum ", desc: "lorem sit amet consectetur  ipsum dolor sit amet consectetur adipiscing elit", img: { uri: 'https://reactnative.dev/img/tiny_logo.png' } },
         { key: '3', author: "Tono", tittle: "Lorem Ipsum ", desc: "lorem sit amet consectetur  ipsum dolor sit amet consectetur adipiscing elit", img: { uri: 'https://reactnative.dev/img/tiny_logo.png' } },
@@ -28,7 +29,9 @@ function HomeScreen() {
 
     ])
     return (
+       
         <View >
+           
             <Header
                 statusBarProps={{ barStyle: 'light-content' }}
                 leftComponent={<Image
@@ -37,14 +40,25 @@ function HomeScreen() {
                 />}
                 centerComponent={{ text: 'MY TITLE', style: { color: '#fff' } }}
                 rightComponent={
-                    <View style={{ flexDirection: "row", borderRadius: 0.5, backgroundColor: '#ddf' }}>
-                        <Icon
-                            type="font-awesome"
-                            name='filter' />
-                        <Text>
-                            Filtered By
-                        </Text>
-                    </View>
+                    <TouchableHighlight underlayColor="white">
+                                <View style={{ height: 30, borderWidth: 0.2, borderRadius: 10, width: 100, flexDirection: "row", justifyContent: 'center', alignItems: 'center', backgroundColor: '#fff' }}>
+                                    <Icon
+                                        name='filter'
+                                        type='font-awesome'
+                                        color='#f50'
+                                        style={{fontSize:2}}
+                                         />
+                                    <Text style={{marginLeft:10,fontSize:12}}>FILTER BY</Text>
+                                </View>
+                    </TouchableHighlight>
+                    // <View style={{ flexDirection: "row", borderRadius: 0.5, backgroundColor: '#ddf' }}>
+                    //     <Icon
+                    //         type="font-awesome"
+                    //         name='filter' />
+                    //     <Text>
+                    //         Filtered By
+                    //     </Text>
+                    // </View>
                 }
                 containerStyle={{
                     height: 65,
@@ -54,8 +68,8 @@ function HomeScreen() {
             />
             <View style={{ backgroundColor: '#ddd', borderRadius: 10 }}>
                 <Picker
-                itemStyle={{ backgroundColor: "grey", color: "blue", fontFamily:"Ebrima", fontSize:17 }}
-                
+                    itemStyle={{ backgroundColor: "grey", color: "blue", fontFamily: "Ebrima", fontSize: 17 }}
+
                     selectedValue={selectedVal}
                     onValueChange={(val) => { setSelectedVal(val) }}
                 >
@@ -87,16 +101,16 @@ function HomeScreen() {
                             </View>
                             <Text>{item.author} </Text>
                             <Text>{item.desc} </Text>
-                            
+
                             {/* //Button bawah kanan */}
                             <View style={{
-                                marginTop:10,
+                                marginTop: 10,
                                 height: 30,
                                 // backgroundColor: '#ddd',
                                 flexDirection: 'row',
                                 justifyContent: 'flex-end'
                             }}>
-                                <View style={{flex:1, marginLeft:0,flexDirection:'row'}} >
+                                <View style={{ flex: 1, marginLeft: 0, flexDirection: 'row' }} >
                                     <Image
                                         style={{ width: 30, height: 30, borderRadius: 30 / 2 }}
                                         source={{
@@ -104,7 +118,7 @@ function HomeScreen() {
                                         }}
                                     />
                                 </View>
-                                <TouchableHighlight style={{ flex:1, width: 70, justifyContent: 'center', borderColor: '#000', borderWidth: 0.5, backgroundColor: 'white', borderRadius: 10, marginRight: 20, alignItems: 'center' }}>
+                                <TouchableHighlight style={{ flex: 1, width: 70, justifyContent: 'center', borderColor: '#000', borderWidth: 0.5, backgroundColor: 'white', borderRadius: 10, marginRight: 20, alignItems: 'center' }}>
                                     <View style={{ flexDirection: 'row' }}>
                                         <Icon
                                             color='tomato'
@@ -114,7 +128,7 @@ function HomeScreen() {
                                         <Text style={{ marginLeft: 10, color: 'black' }}>500</Text>
                                     </View>
                                 </TouchableHighlight>
-                                <TouchableHighlight style={{ flex:1, width: 70, justifyContent: 'center', borderColor: '#000', borderWidth: 0.5, backgroundColor: 'white', borderRadius: 10, alignItems: 'center' }}>
+                                <TouchableHighlight style={{ flex: 1, width: 70, justifyContent: 'center', borderColor: '#000', borderWidth: 0.5, backgroundColor: 'white', borderRadius: 10, alignItems: 'center' }}>
                                     <View style={{ flexDirection: 'row' }}>
                                         <Icon
                                             color='tomato'
