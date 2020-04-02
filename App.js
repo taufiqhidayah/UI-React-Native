@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Button } from 'react-native-elements';
-import { Text, View,TouchableHighlight} from 'react-native';
+import { Text, View, TouchableHighlight } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Icon } from 'react-native-elements';
@@ -45,23 +45,35 @@ function MyTabs() {
           <MentorStack.Navigator>
             <MentorStack.Screen options={{
               title: 'MENTOR',
-          
-              cardShadowEnabled:false,
+
+              cardShadowEnabled: false,
               headerRight: () => (
-                <TouchableHighlight underlayColor="white" style={{marginRight:10}}>
-                                <View style={{ height: 30, borderWidth: 0.2, borderRadius: 10, width: 100, flexDirection: "row", justifyContent: 'center', alignItems: 'center', backgroundColor: '#fff' }}>
-                                    <Icon
-                                        name='filter'
-                                        type='font-awesome'
-                                        color='#f50'
-                                        style={{fontSize:2}}
-                                         />
-                                    <Text style={{marginLeft:10,fontSize:12}}>FILTER BY</Text>
-                                </View>
-                    </TouchableHighlight>
+                <TouchableHighlight underlayColor="white" style={{ marginRight: 10 }}>
+                  <View style={{ height: 30, borderWidth: 0.2, borderRadius: 10, width: 100, flexDirection: "row", justifyContent: 'center', alignItems: 'center', backgroundColor: '#fff' }}>
+                    <Icon
+                      name='filter'
+                      type='font-awesome'
+                      color='#f50'
+                      style={{ fontSize: 2 }}
+                    />
+                    <Text style={{ marginLeft: 10, fontSize: 12 }}>FILTER BY</Text>
+                  </View>
+                </TouchableHighlight>
               ),
             }} name="Mentor" component={MentorScreen} />
-            <MentorStack.Screen name="Details" component={DetailProfileScreen} />
+            <MentorStack.Screen name="Details" component={DetailProfileScreen}
+              options={{
+                headerRight: () => (
+                  <View 
+                  style={{marginRight:20}}>
+                  <Icon
+                    name='ellipsis-v'
+                    type='font-awesome'
+                    onPress={() => alert('hello')} />
+                    </View>
+                )
+              }}
+            />
           </MentorStack.Navigator>
         )}
       </Tab.Screen>
